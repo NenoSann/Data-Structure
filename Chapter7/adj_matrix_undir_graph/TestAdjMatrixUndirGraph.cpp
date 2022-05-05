@@ -1,8 +1,8 @@
-ï»¿#include "AdjMatrixUndirGraph.h"		// é‚»æ¥çŸ©é˜µæ— å‘å›¾
+#include "AdjMatrixUndirGraph.h"		// ÁÚ½Ó¾ØÕóÎŞÏòÍ¼
 
 int main(void)
 {
-    try									// ç”¨tryå°è£…å¯èƒ½å‡ºç°å¼‚å¸¸çš„ä»£ç 
+    try									// ÓÃtry·â×°¿ÉÄÜ³öÏÖÒì³£µÄ´úÂë
 	{
 		char vexs[] = {'A', 'B', 'C', 'D', 'E'};
 		int m[5][5] = {
@@ -22,16 +22,16 @@ int main(void)
 				if (m[u][v] == 1) g.InsertArc(u, v);
 
 	    while (c != '9')	{
-            cout << endl << "1. å›¾æ¸…ç©º.";
-            cout << endl << "2. æ˜¾ç¤ºå›¾.";
-            cout << endl << "3. å–æŒ‡å®šé¡¶ç‚¹çš„å€¼.";
-            cout << endl << "4. è®¾ç½®æŒ‡å®šé¡¶ç‚¹çš„å€¼.";
-            cout << endl << "5. åˆ é™¤é¡¶ç‚¹.";
-            cout << endl << "6. æ’å…¥é¡¶ç‚¹.";
-            cout << endl << "7. åˆ é™¤è¾¹.";
-            cout << endl << "8. æ’å…¥è¾¹.";
-		    cout << endl << "9. é€€å‡º";
-		    cout << endl << "é€‰æ‹©åŠŸèƒ½(1~9):";
+            cout << endl << "1. Í¼Çå¿Õ.";
+            cout << endl << "2. ÏÔÊ¾Í¼.";
+            cout << endl << "3. È¡Ö¸¶¨¶¥µãµÄÖµ.";
+            cout << endl << "4. ÉèÖÃÖ¸¶¨¶¥µãµÄÖµ.";
+            cout << endl << "5. É¾³ı¶¥µã.";
+            cout << endl << "6. ²åÈë¶¥µã.";
+            cout << endl << "7. É¾³ı±ß.";
+            cout << endl << "8. ²åÈë±ß.";
+		    cout << endl << "9. ÍË³ö";
+		    cout << endl << "Ñ¡Ôñ¹¦ÄÜ(1~9):";
 		    cin >> c;
 		    switch (c) 		{
 			    case '1':
@@ -39,42 +39,42 @@ int main(void)
 				    break;
 			    case '2':
                     if (g.IsEmpty())
-                        cout << "è¯¥å›¾ä¸ºç©ºã€‚" << endl;
+                        cout << "¸ÃÍ¼Îª¿Õ¡£" << endl;
                     else 
 			            g.Display();
 				    break;
 			    case '3':
-			        cout << endl << "è¾“å…¥é¡¶ç‚¹åºå·ï¼ˆå›¾çš„é¡¶ç‚¹åºå·ä»0å¼€å§‹ï¼‰:";
+			        cout << endl << "ÊäÈë¶¥µãĞòºÅ£¨Í¼µÄ¶¥µãĞòºÅ´Ó0¿ªÊ¼£©:";
 			        cin >> v;
 		            g.GetElem(v, e);
-		            cout << "åºå·ä¸º" << v << "çš„é¡¶ç‚¹ä¸º" << e;
+		            cout << "ĞòºÅÎª" << v << "µÄ¶¥µãÎª" << e;
 			        break;
 			    case '4':
-			        cout << endl << "è¾“å…¥é¡¶ç‚¹åºå·ï¼ˆå›¾çš„é¡¶ç‚¹åºå·ä»0å¼€å§‹ï¼‰:";
+			        cout << endl << "ÊäÈë¶¥µãĞòºÅ£¨Í¼µÄ¶¥µãĞòºÅ´Ó0¿ªÊ¼£©:";
 			        cin >> v;
-			        cout << endl << "è¾“å…¥" << v <<"å·é¡¶ç‚¹çš„å€¼:";
+			        cout << endl << "ÊäÈë" << v <<"ºÅ¶¥µãµÄÖµ:";
 			        cin >> e;
 		            g.SetElem(v, e);
 			        break;
 			    case '5':
-			        cout << endl << "è¾“å…¥è¢«åˆ é™¤é¡¶ç‚¹çš„å€¼:";
+			        cout << endl << "ÊäÈë±»É¾³ı¶¥µãµÄÖµ:";
 			        cin >> e;
 		            g.DeleteVex(e);
 			        break;
 			    case '6':
-			        cout << endl << "è¾“å…¥æ’å…¥é¡¶ç‚¹çš„å€¼:";
+			        cout << endl << "ÊäÈë²åÈë¶¥µãµÄÖµ:";
 			        cin >> e;
 		            g.InsertVex(e);
 			        break;
 			    case '7':
-			        cout << endl << "è¾“å…¥ä¸è¢«åˆ é™¤è¾¹å…³è”çš„ä¸¤ä¸ªé¡¶ç‚¹å€¼:";
+			        cout << endl << "ÊäÈëÓë±»É¾³ı±ß¹ØÁªµÄÁ½¸ö¶¥µãÖµ:";
 			        cin >> e1 >> e2;
 			        v1 = g.GetOrder(e1);
 			        v2 = g.GetOrder(e2);
 		            g.DeleteArc(v1, v2);
 			        break;
 			    case '8':
-			        cout << endl << "è¾“å…¥ä¸æ’å…¥è¾¹å…³è”çš„ä¸¤ä¸ªé¡¶ç‚¹å€¼:";
+			        cout << endl << "ÊäÈëÓë²åÈë±ß¹ØÁªµÄÁ½¸ö¶¥µãÖµ:";
 			        cin >> e1 >> e2;
 			        v1 = g.GetOrder(e1);
 			        v2 = g.GetOrder(e2);
@@ -83,12 +83,12 @@ int main(void)
        	      }
          }
 	}
-	catch (Error err)					// æ•æ‰å¹¶å¤„ç†å¼‚å¸¸
+	catch (Error err)					// ²¶×½²¢´¦ÀíÒì³£
 	{
-		err.Show();						// æ˜¾ç¤ºå¼‚å¸¸ä¿¡æ¯
+		err.Show();						// ÏÔÊ¾Òì³£ĞÅÏ¢
 	}
 
-	system("PAUSE");					// è°ƒç”¨åº“å‡½æ•°system()
-	return 0;							// è¿”å›å€¼0, è¿”å›æ“ä½œç³»ç»Ÿ
+	system("PAUSE");					// µ÷ÓÃ¿âº¯Êısystem()
+	return 0;							// ·µ»ØÖµ0, ·µ»Ø²Ù×÷ÏµÍ³
 }
 

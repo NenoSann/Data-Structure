@@ -1,8 +1,8 @@
-ï»¿#include "HuffmanTree.h"	// å“ˆå¤«æ›¼æ ‘ç±»
+#include "HuffmanTree.h"	// ¹ş·òÂüÊ÷Àà
 
 int main(void)
 {
-    try	{					// ç”¨tryå°è£…å¯èƒ½å‡ºç°å¼‚å¸¸çš„ä»£ç 
+    try	{					// ÓÃtry·â×°¿ÉÄÜ³öÏÖÒì³£µÄ´úÂë
 		char ch[] = {'A', 'B', 'C', 'D'}; 
 		int w[] = {12, 3, 5, 9};
 		int n = 4, i;
@@ -10,29 +10,29 @@ int main(void)
 		HuffmanTree<char, int> hmTree1(ch, w, n);
 		HuffmanTree<char, int> hmTree(hmTree1);
 		hmTree = hmTree1;			
-		String strText = "ABCDADCBD";	// æ–‡æœ¬ä¸²
-		String strCode = "100111010011";		// ç¼–ç ä¸²
+		String strText = "ABCDADCBD";	// ÎÄ±¾´®
+		String strCode = "100111010011";		// ±àÂë´®
 
-		cout << "å„å­—ç¬¦çš„ç¼–ç ä¸º:" << endl;
+		cout << "¸÷×Ö·ûµÄ±àÂëÎª:" << endl;
 		for (i = 0; i < n; i++)  {
 			String strTmp = hmTree.Encode(ch[i]);
 			cout << ch[i] << " : " << strTmp.CStr() << endl;
 		}
 		
-		cout << "æ–‡æœ¬ä¸²" << strText.CStr() << "ç¼–ç ä¸º:";
+		cout << "ÎÄ±¾´®" << strText.CStr() << "±àÂëÎª:";
 		for (i = 0; i < strText.GetLength(); i++)		{
 			String strTmp = hmTree.Encode(strText[i]);
 			cout << strTmp.CStr();
 		}
 		cout << endl;
 		system("PAUSE");	
-		cout << "ç¼–ç ä¸²" << strCode.CStr() << "è¯‘ç ä¸º:";
+		cout << "±àÂë´®" << strCode.CStr() << "ÒëÂëÎª:";
 		LinkList<char> lkText = hmTree.Decode(strCode);
 		strText = lkText;
 		cout << strText.CStr() << endl;
 	}
-	catch (Error err)	{	// æ•æ‰å¹¶å¤„ç†å¼‚å¸¸
-		err.Show();			// æ˜¾ç¤ºå¼‚å¸¸ä¿¡æ¯
+	catch (Error err)	{	// ²¶×½²¢´¦ÀíÒì³£
+		err.Show();			// ÏÔÊ¾Òì³£ĞÅÏ¢
 	}
 
 	system("PAUSE");  
